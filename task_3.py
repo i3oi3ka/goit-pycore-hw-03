@@ -21,13 +21,13 @@ def normalize_phone(phone_number: str) -> str:
         return ""
 
     normalize_phone_number = re.sub(
-        r"^(380|80|0)?(\d{9})", "+380" + r"\2", phone_number
+        r"^(380|80|0)?(\d{9})(\d*)$", "+380" + r"\2", phone_number
     )
     return normalize_phone_number
 
 
 raw_numbers = [
-    "067\\t123 4567",
+    "067\\t123 45678",
     "(095) 234-5678\\n",
     "+380 44 123 4567",
     "380501234567",
@@ -37,8 +37,8 @@ raw_numbers = [
     "38050-111-22-22",
     "38050 111 22 11   ",
     "50 111 22 11   ",
-    679555174,
-    12345,
+    6795551742511,
+    "////////////////////////",
 ]
 
 sanitized_numbers = [normalize_phone(num) for num in raw_numbers]
