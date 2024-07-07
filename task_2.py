@@ -28,11 +28,11 @@ def get_numbers_ticket(min_number: int, max_number: int, quantity: int) -> list[
         or max_number > 1000
         or max_number < min_number
         or quantity not in possible_numbers
-        or max_number - min_number < quantity - 1
+        or max_number - min_number <= quantity
     ):
         return []
     return sorted(sample(possible_numbers, quantity))
 
 
-lottery_numbers = get_numbers_ticket("1", 100, 10)
+lottery_numbers = get_numbers_ticket("a", 100, 10)
 print("Ваші лотерейні числа:", lottery_numbers)
