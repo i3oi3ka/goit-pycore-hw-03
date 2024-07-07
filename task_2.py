@@ -1,10 +1,11 @@
 """task 2"""
+
 from random import sample
 
 
 def get_numbers_ticket(min_number: int, max_number: int, quantity: int) -> list[int]:
     """
-    Generate a set of unique random numbers for lottery.
+    Generate a set of unique random numbers for lottery. If the parameters do not meet the specified restrictions, the function returns an empty list.
 
     Parameters:
     min (int) - the minimum possible number in the set (not less than 1).
